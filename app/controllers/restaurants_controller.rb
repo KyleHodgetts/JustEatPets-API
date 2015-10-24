@@ -24,10 +24,8 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_products
-    @products = []
     if restaurant = Restaurant.find(params[:restaurant_id])
-      @products = restaurant.products
-    end
-    @products
+      restaurant.products
+    end || []
   end
 end

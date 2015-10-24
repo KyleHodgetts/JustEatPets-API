@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   get 'restaurants/:restaurant_id/products/type/:pet', to: 'restaurants#products_for_pet'
 
   get 'products/', to: 'products#index'
+  get 'products/pet/:pet', to: 'products#products_for_pet'
 
   get 'products/:id', to: 'products#show'
+
 
 
   # Example of regular route:

@@ -9,5 +9,13 @@ class ProductsController < ApplicationController
     render json: @product
   end
 
+  def products_for_pet
+    @products =  Product.all
+    @products.select do |product|
+      product.pet = params[:pet]
+    end
+    render json: @products
+  end
+
 
 end
