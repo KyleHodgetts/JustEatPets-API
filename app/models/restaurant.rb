@@ -6,7 +6,6 @@ class Restaurant < ActiveRecord::Base
 
 	before_save { self.postcode = postcode.upcase }
 
-	validates :id, presence: true
 	validates :postcode, presence: true,
 		format: { with: VALID_POSTCODE_REGEX }
 

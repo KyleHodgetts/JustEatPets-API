@@ -6,11 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-restaurant1 = ["B15 2TT", "Jana's Pet Store"]
-restaurant2 = ["B15 2TT", "Jonathan's Pet Store"]
+restaurants = [{name: "Jana's Pet Store", postcode: "B15 2TT"}, 
+	{name: "Josh's Pet Store", postcode: "B15 2TQ"}]
 
-# names = ["Tesco Cat Pouches Cuts In Jelly Select 12X100g", 
-# 	"Tesco Dog Healthy Treats 7 Dental Sticks 180G",
-# 	"Felix As Good As It Looks Doubly Delicious Meat Flavour",
-# 	"Pedigree Denta Stix Med/Large Dogs 7 Stick",
-# 	"Tesco Dog Chunk In Jelly Selection 12X400g" ]
+products = [{name: "Cat Pouch", pet: "cat", price: 24.2}, 
+	{name: "Dog Bag", pet: "dog", price: 34.2}, 
+	{name: "Llama Food", pet: "llama", price: 12.2},
+	{name: "Lettuce", pet: "turtle", price: 0.90}]
+
+products.each do |p|
+	Product.create(name: p[:name], pet: p[:pet], price: p[:price])
+end
+
+restaurants.each do |r|
+	Restaurant.create(name: r[:name], postcode: r[:postcode])
+end
+
+Restaurant.find_by_name("Jana's Pet Store").products << Product.find_by_name("Cat Pouch")
+Restaurant.find_by_name("Jana's Pet Store").products << Product.find_by_name("Dog Bag")
+Restaurant.find_by_name("Josh's Pet Store").products << Product.find_by_name("Llama Food")
+Restaurant.find_by_name("Josh's Pet Store").products << Product.find_by_name("Lettuce")
