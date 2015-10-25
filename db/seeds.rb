@@ -8,11 +8,11 @@
 
 # OLD SEED
 
-# restaurants = [{name: "Jana's Pet Store", postcode: "B15 2TT"}, 
-# 	{name: "Josh's Pet Store", postcode: "B15 2TQ"}]
+restaurants = [{name: "Jana's Pet Store", postcode: "B15 2TT"},
+	             {name: "Josh's Pet Store", postcode: "B15 2TQ"}]
 
-# products = [{name: "Cat Pouch", pet: "cat", price: 24.2}, 
-# 	{name: "Dog Bag", pet: "dog", price: 34.2}, 
+# products = [{name: "Cat Pouch", pet: "cat", price: 24.2},
+# 	{name: "Dog Bag", pet: "dog", price: 34.2},
 # 	{name: "Llama Food", pet: "llama", price: 12.2},
 # 	{name: "Lettuce", pet: "turtle", price: 0.90}]
 
@@ -20,9 +20,9 @@
 # 	Product.create(name: p[:name], pet: p[:pet], price: p[:price])
 # end
 
-# restaurants.each do |r|
-# 	Restaurant.create(name: r[:name], postcode: r[:postcode])
-# end
+restaurants.each do |r|
+	Restaurant.create(name: r[:name], postcode: r[:postcode])
+end
 
 # Restaurant.find_by_name("Jana's Pet Store").products << Product.find_by_name("Cat Pouch")
 # Restaurant.find_by_name("Jana's Pet Store").products << Product.find_by_name("Dog Bag")
