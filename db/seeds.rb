@@ -8,9 +8,6 @@
 
 # OLD SEED
 
-# restaurants = [{name: "Jana's Pet Store", postcode: "B15 2TT"},
-# 	{name: "Josh's Pet Store", postcode: "B15 2TQ"}]
-
 # products = [{name: "Cat Pouch", pet: "cat", price: 24.2},
 # 	{name: "Dog Bag", pet: "dog", price: 34.2},
 # 	{name: "Llama Food", pet: "llama", price: 12.2},
@@ -20,18 +17,12 @@
 # 	Product.create(name: p[:name], pet: p[:pet], price: p[:price])
 # end
 
-# restaurants.each do |r|
-# 	Restaurant.create(name: r[:name], postcode: r[:postcode])
-# end
-
 # Restaurant.find_by_name("Jana's Pet Store").products << Product.find_by_name("Cat Pouch")
 # Restaurant.find_by_name("Jana's Pet Store").products << Product.find_by_name("Dog Bag")
 # Restaurant.find_by_name("Josh's Pet Store").products << Product.find_by_name("Llama Food")
 # Restaurant.find_by_name("Josh's Pet Store").products << Product.find_by_name("Lettuce")
 
 require 'csv'
-
-Product.delete_all
 
 file = File.read("db/import/pet-food-from-sainsburys.csv"); nil
 
@@ -48,3 +39,12 @@ Product.all.map{ |product| product.name = product.name.split('Only').first.strip
 Product.all.map{ |product| product.name = product.name.split('£').first.strip; product.save if product.name_changed? }
 
 Product.all.map(&:name)
+
+restaurants = [{name: "Jolly Joe's", postcode: "B15 2TT"},
+  {name: "Josh's Fridge", postcode: "B15 2TQ"},
+  {name: "Yummy Jana's", postcode: "W14 8QW"},
+  {name: "Mamma Maria's", postcode: "W14 8HW"} ]
+
+restaurants.each do |r|
+	Restaurant.create(name: r[:name], postcode: r[:postcode])
+end
