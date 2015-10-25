@@ -31,7 +31,7 @@ end
 
 require 'csv'
 
-Product.destroy_all()
+Product.delete_all
 
 file = File.read("db/import/pet-food-from-sainsburys.csv"); nil
 
@@ -39,7 +39,7 @@ csv = CSV.parse(file, :headers => true)
 
 csv.each do |row|
 
-Product.create!(row.to_hash)
+  Product.create!(row.to_hash)
 
 end
 
