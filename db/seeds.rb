@@ -23,7 +23,6 @@ restaurants = [{name: "Jana's Pet Store", postcode: "B15 2TT"},
 restaurants.each do |r|
 	Restaurant.create(name: r[:name], postcode: r[:postcode])
 end
-
 # Restaurant.find_by_name("Jana's Pet Store").products << Product.find_by_name("Cat Pouch")
 # Restaurant.find_by_name("Jana's Pet Store").products << Product.find_by_name("Dog Bag")
 # Restaurant.find_by_name("Josh's Pet Store").products << Product.find_by_name("Llama Food")
