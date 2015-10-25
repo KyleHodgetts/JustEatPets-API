@@ -31,6 +31,8 @@ end
 
 require 'csv'
 
+Product.destroy_all()
+
 file = File.read("db/import/pet-food-from-sainsburys.csv"); nil
 
 csv = CSV.parse(file, :headers => true)
