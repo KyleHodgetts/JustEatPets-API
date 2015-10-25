@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
-  root 'index'
+  root 'pages#index'
+  get 'pages/index'
 
   get 'restaurants/', to: 'restaurants#index'
 
