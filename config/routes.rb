@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'index'
+
   get 'restaurants/', to: 'restaurants#index'
 
   get 'restaurants/:id', to: 'restaurants#show'
