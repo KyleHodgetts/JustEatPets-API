@@ -8,11 +8,11 @@
 
 # OLD SEED
 
-# restaurants = [{name: "Jana's Pet Store", postcode: "B15 2TT"}, 
+# restaurants = [{name: "Jana's Pet Store", postcode: "B15 2TT"},
 # 	{name: "Josh's Pet Store", postcode: "B15 2TQ"}]
 
-# products = [{name: "Cat Pouch", pet: "cat", price: 24.2}, 
-# 	{name: "Dog Bag", pet: "dog", price: 34.2}, 
+# products = [{name: "Cat Pouch", pet: "cat", price: 24.2},
+# 	{name: "Dog Bag", pet: "dog", price: 34.2},
 # 	{name: "Llama Food", pet: "llama", price: 12.2},
 # 	{name: "Lettuce", pet: "turtle", price: 0.90}]
 
@@ -30,6 +30,8 @@
 # Restaurant.find_by_name("Josh's Pet Store").products << Product.find_by_name("Lettuce")
 
 require 'csv'
+
+Product.destroy_all()
 
 file = File.read("db/import/pet-food-from-sainsburys.csv"); nil
 
