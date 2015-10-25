@@ -1,28 +1,15 @@
-== README
+== JustEatPets API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This was built as a backend for an Android Application, whose resposity is [here](http://github.com/fareskalaboud/JustEatPets-App).
 
-Things you may want to cover:
+This was built as a submission to [BrumHack 2015](http://brumhack.co.uk) by:
 
-* Ruby version
+* [Kyle Hodgetts](http://kylehodgetts.com)
 
-* System dependencies
+* [Fares K. Alaboud](http://fares.ws)
 
-* Configuration
+* [Jana Hogstrand](http://twitter.com/jhogstrand)
 
-* Database creation
+* [Jonathan Burton](http://jonathanburton.me)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+For the app APK, [click here](http://justeatpets.com).
